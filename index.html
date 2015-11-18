@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Everbridge 2015 Annual Party -- Lottery draw</title>
+    <style>
+        html, body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-size: 20px;
+            background-color: #BE2136;
+            color: white;
+        }
+
+        #dvWelcome, #dvLotteryDraw, #dvBye {
+            width: 100%;
+            height: 100%;
+            display: none;
+            font-size: 1rem;
+        }
+
+        #dvLotteryEffect, #dvLotteryResult {
+            position: relative;
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+
+        #btnNextPage, #btnClear {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1rem;
+            z-index: 1;
+        }
+
+        #btnClear {
+            right: 180px;
+        }
+
+        /*------Welcome------*/
+        #dvWelcome {
+            display: block;
+        }
+
+        .welcome-content {
+            display: block;
+            position: absolute;
+            left: 10%;
+            width: auto;
+            top: 20%;
+            color: #EDF930;
+            font-size: 3rem;
+        }
+
+        /*------Draw------*/
+        #dvLotteryEffect {
+        }
+
+        .introduce {
+            font-size: 1rem;
+            position: absolute;
+            left: 50%;
+            margin-left: -90px;
+        }
+
+        .preload-container {
+            height: 50%;
+            overflow: auto;
+            margin-top: 40px;
+            /*display: none;*/
+        }
+
+        .preload-attendance {
+            display: inline-block;
+            margin: 2px;
+            position: relative;
+            text-align: center;
+        }
+
+        .preload-attendance-name {
+            display: inline-block;
+            font-size: 0.7rem
+        }
+
+        .preload-attendance.winner {
+            /*display: none;*/
+            color: #EDF930;
+        }
+
+        .preload-attendance-winner-desc {
+            background-color: red;
+            display: inline-block;
+            color: white;
+            position: absolute;
+            width: 69px;
+            left: 0px;
+            padding: 3px;
+            top: 20px;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .headimage {
+            width: 250px;
+            height: 250px;
+            display: inline-block;
+        }
+
+        .preload-attendance .headimage {
+            display: block;
+            clear: right;
+            width: 75px;
+            height: 75px;
+            margin-bottom: 5px;
+        }
+
+        #dvFrame {
+            position: relative;
+            width: 250px;
+            height: 300px;
+            left: 50%;
+            margin-left: -125px;
+            padding: 5px;
+            border: solid 1px red;
+            background-color: #633333;
+        }
+
+        div.result-container {
+            margin: 5px;
+            padding: 5px;
+            border: solid 1px red;
+        }
+
+        span.attendance-name {
+            position: relative;
+            left: 50px;
+            top: 10px;
+            font-size: 1.2rem;
+        }
+
+        span.result-head-name {
+            font-size: 1.6rem;
+            color: #F1DD17;
+        }
+
+        span.result-head-desc {
+            position: relative;
+            left: 60px;
+            font-size: 0.8rem;
+        }
+
+        .result-item {
+            display: inline-block;
+            font-size: 0.7rem;
+            margin: 5px;
+        }
+
+        .result-item-headimg {
+            width: 70px;
+            height: 70px;
+            display: block;
+            clear: right;
+        }
+
+        .result-item-name {
+
+        }
+
+        #dvCurrent {
+            position: absolute;
+            display: none;
+            font-size: 1.6rem;
+        }
+
+
+        #totalAttendance {
+            font-size: 1rem;
+            position: relative;
+            top: 36px;
+            color: white;
+            display: inline-block;
+            width: 95%;
+            background-color: red;
+            padding: 2px 0 2px 10px;
+        }
+
+        @-webkit-keyframes currentLevel {
+            0% {
+                border: 2px solid red;
+            }
+            50% {
+                border: 2px solid #ffca90;
+            }
+            100% {
+                border: 2px solid red;
+            }
+        }
+
+        div.result-container.currentLevel {
+            margin-top: 4px;
+            margin-left: 4px;
+            -webkit-animation: currentLevel 1s infinite linear;
+        }
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/lottery.io.js"></script>
+    <script src="js/lottery.js"></script>
+    <script>
+        $(function () {
+            var pageCount = 0;
+            $('#dvWelcome,#dvBye,#btnNextPage').click(function () {
+                pageCount++;
+                if (pageCount === 3) {
+                    pageCount = 0;
+                }
+                switch (pageCount) {
+                    case 0:
+                        $('#dvWelcome').show();
+                        $('#dvBye').slideUp(200);
+                        break;
+                    case 1:
+                        $('#dvWelcome').hide();
+                        $('#dvLotteryDraw').slideDown(200);
+                        break;
+                    case 2:
+                        $('#dvLotteryDraw').hide();
+                        $('#btnClear').show();
+                        $('#dvBye').slideDown(200);
+                        break;
+                }
+            });
+            $('#dvLotteryResult').delegate('.result-container', 'click', function () {
+                //set cursor
+                var position = $(this).position(),
+                        width = $('#dvCurrent').width();
+                $('#dvCurrent').css({
+                    left: position.left - 10 - width,
+                    top: position.top + 5
+                }).show();
+                $('.currentLevel').removeClass('currentLevel');
+                $(this).addClass('currentLevel');
+                lottery.setCurrentLevel($(this));
+            });
+            $('body').keyup(function (e) {
+                if (e.keyCode !== 32 && e.which !== 32) {
+                    return;
+                }
+                if (!lottery._currentPool || !lottery._currentPool.length) {
+                    alert('所有人都中奖了……');
+                    return;
+                }
+                if (!lottery._currentLevel) {
+                    alert('Please select a prize first');
+                    return;
+                }
+                if (!lottery.isCurrentLevelCanGoOn()) {
+                    alert('God, no more 这一级别的奖品了');
+                    return;
+                }
+                //start or stop lottery draw
+                lottery.draw.startOrStop();
+                //change status
+                $('#spIntroduce').html(lottery.draw.state ? 'Press "Space key" to Stop' : 'Press "Space key" to Start');
+            })
+            $('#btnClear').click(function () {
+                if (confirm('Are you sure you want to clear all results?')) {
+                    lottery.storage.clear();
+                    location.reload();
+                }
+            })
+            //Lottery routine initialize
+            lottery.init($('#dvLotteryEffect'), $('#dvLotteryResult'), $('#dvFrame'));
+//for dev
+//            $('#dvWelcome').click();
+        })
+    </script>
+</head>
+<body>
+<button id="btnNextPage">Next Page →</button>
+<div id="dvWelcome">
+    <div class="welcome-content">
+        Everbridge 2015 Annual Party -- Lottery draw
+    </div>
+</div>
+<div id="dvLotteryDraw">
+    <div id="dvLotteryEffect">
+        <div id="dvFrame">
+            <span class="attendance-name" style="left:10px;">
+            Who will be the luck guy ?
+            </span>
+        </div>
+        <span id="spIntroduce" class="introduce">
+            Press "Space key" to Start
+        </span>
+    </div>
+    <div id="dvLotteryResult">
+        <div id="dvCurrent">
+            →
+        </div>
+    </div>
+</div>
+<div id="dvBye">
+    结束页，随便来点东西。给个按钮，清空抽奖结果，弹框确认一下
+    <button id="btnClear">Clear</button>
+</div>
+</body>
+</html>
