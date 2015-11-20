@@ -30,12 +30,21 @@
           },
           start: function (attendanceList) {
             var me = this,
+                pauseFrames = 60,
+                currentPauseFrame = 0,
                 nextFrame = function () {
-                  var nextIndex = Math.floor(Math.random() * attendanceList.length),
-                      attendance = me.currentAttendance = attendanceList[nextIndex];
-                  me._frameContainer.empty();
-                  me._frameContainer.append($('.headimage[alt="' + attendance.name + '"]').clone());
-                  me._frameContainer.append("<span class='attendance-name'>" + attendance.name + "</span>");
+                  if (currentPauseFrame === 0) {
+                    pauseFrames = currentPauseFrame = Math.floor(pauseFrames - pauseFrames * 0.25);
+                    //pauseFrames = currentPauseFrame = Math.floor(pauseFrames * 0.8);
+                    //pauseFrames = currentPauseFrame = pauseFrames > 0 ? Math.floor(pauseFrames - 6) : 0;
+                    var nextIndex = Math.floor(Math.random() * attendanceList.length),
+                        attendance = me.currentAttendance = attendanceList[nextIndex];
+                    me._frameContainer.empty();
+                    me._frameContainer.append($('.headimage[alt="' + attendance.name + '"]').clone());
+                    me._frameContainer.append("<span class='attendance-name'>" + attendance.name + "</span>");
+                  } else {
+                    currentPauseFrame--;
+                  }
                   if (me.state === 1) {
                     win.requestAnimationFrame(nextFrame);
                   }
@@ -115,7 +124,7 @@
           }, htmlOut = '';
           for (var i = 0; i < attendances.length; i++) {
             htmlOut += awardItemTemplate(attendances[i]);
-            var preloadItem = $('.preload-attendance:contains("'+attendances[i].name+'")');
+            var preloadItem = $('.preload-attendance:contains("' + attendances[i].name + '")');
             preloadItem.addClass('winner').append("<span class='preload-attendance-winner-desc'>Winner!</span>");
           }
           container.append(htmlOut);
