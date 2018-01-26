@@ -34,7 +34,7 @@
                 currentPauseFrame = 0,
                 nextFrame = function () {
                   if (currentPauseFrame === 0) {
-                    pauseFrames = currentPauseFrame = Math.floor(pauseFrames - pauseFrames * 0.25);
+                    pauseFrames = currentPauseFrame = Math.floor(pauseFrames - pauseFrames * 0.45);
                     //pauseFrames = currentPauseFrame = Math.floor(pauseFrames * 0.8);
                     //pauseFrames = currentPauseFrame = pauseFrames > 0 ? Math.floor(pauseFrames - 6) : 0;
                     var nextIndex = Math.floor(Math.random() * attendanceList.length),

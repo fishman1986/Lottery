@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;list-style-type:none;}
+img{border:none;}
+p{margin-bottom:10px;color:#FFFFFF;}
+.leftcurtain{width:50%;height:100%;top:0px;left:0px;position:absolute;z-index:6;}
+.rightcurtain{width:51%;height:100%;right:0px;top:0px;position:absolute;z-index:7;}
+.top{width:100%;height:20%;right:0px;top:0px;position:absolute;z-index:9;}
+.rightcurtain img, .leftcurtain img{width:100%;height:100%;}
+.rope{position:absolute;top:-40px;left:90%;z-index:8;}
+.logo{margin:0px auto;margin-top:80px;}
+.glostLeft img{left:30px;top:30px;position:absolute;width:20%;height:20%}
+.glostRight img{right:30px;top:30px;position:absolute;absolute;width:20%;height:20%}
+.action img{right:50%;top:0px;margin-right:-225px;position:absolute;}
+.gift{left:30px;bottom:0;position:absolute;}
+.gift1{left:80px;bottom:-30px;position:absolute}
+.content img{right:14%;top:70px;position:absolute;width:70%;height:70%}
+a.button{position:absolute;bottom:0px;right:0;}
+.backsnow{z-index:5;}

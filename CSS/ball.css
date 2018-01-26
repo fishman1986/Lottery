@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+html{ height:100%}
+body{ background: #e92600 no-repeat center top; background-size:100% 100%}
+.qiqiu{ position:fixed; width:100px; height:200px;}
+.qiqiu div{ width:70px; height:65px; background:url(../images/730e0cf3d7ca7bcbbc1b79c0bf096b63f724a8f9.png) no-repeat center center; padding:15px 15px 0; text-align:center; margin:0 auto; background-size:80% auto;}
+.qiqiu img{ width:100%; height:auto; display:block;}
+
+.qiqiu1{ bottom:-200px; left:400px;animation: myfirst 10s 10s linear infinite; z-index:2222;animation-delay:0s;-webkit-animation: myfirst 10s 10s linear infinite; z-index:2222;-webkit-animation-delay:0s; }
+.qiqiu2{ bottom:-200px; left:650px;animation: myfirst2 12s 1s linear infinite;animation-delay:2s;width:10px;-webkit-animation: myfirst2 12s 1s linear infinite;-webkit-animation-delay:10s;}
+.qiqiu3{ bottom:-200px; left:900px;animation: myfirst3 12.2s linear infinite; z-index:2222;animation-delay:3s;-webkit-animation: myfirst3 12.2s linear infinite;-webkit-animation-delay:3s; }
+.qiqiu4{ bottom:-200px; left:1050px;animation: myfirst4 11s 2s linear infinite; z-index:2222;animation-delay:5s;-webkit-animation: myfirst4 11s 2s linear infinite;-webkit-animation-delay:5s; }
+.qiqiu6{ bottom:-200px; left:950px;animation: myfirst5 10s 4s linear infinite; z-index:2222;animation-delay:8s;-webkit-animation: myfirst5 10s 4s linear infinite;-webkit-animation-delay:8s; }
+.qiqiu7{ bottom:-200px; left:350px;animation: myfirst4 11s 6s linear infinite; z-index:2222;animation-delay:5s;-webkit-animation: myfirst4 11s 6s linear infinite;-webkit-animation-delay:5s; }
+.qiqiu8{ bottom:-200px; left:200px;animation: myfirst6 13s linear infinite; z-index:2222;animation-delay:50s;-webkit-animation: myfirst6 13s linear infinite; z-index:2222;-webkit-animation-delay:50s; }
+.qiqiu9{ bottom:-200px; left:550px;animation: myfirst8 8s 7s linear infinite; z-index:2222;animation-delay:40s;-webkit-animation: myfirst8 8s 7s linear infinite;-webkit-animation-delay:40s; }
+.qiqiu10{ bottom:-200px; left:750px;animation: myfirst4 5s 0.2s linear infinite; z-index:2222;animation-delay:25s;-webkit-animation: myfirst4 5s 0.2s linear infinite;-webkit-animation-delay:25s; }
+.qiqiu11{ bottom:-200px; left:100px;animation: myfirst2 8s 5s linear infinite; z-index:2222;animation-delay:50s;-webkit-animation: myfirst 8s 5s linear infinite;-webkit-animation-delay:50s; }
+.qiqiu12{ bottom:-200px; left:250px;animation: myfirst 7s 10s linear infinite; z-index:2222;animation-delay:15s;-webkit-animation: myfirst 7s 10s linear infinite;-webkit-animation-delay:15s; }
+.qiqiu13{ bottom:-200px; left:700px;animation: myfirst3 9s 6s linear infinite; z-index:2222;animation-delay:30s;-webkit-animation: myfirst3 9s 6s linear infinite;-webkit-animation-delay:30s; }
+.qiqiu5 div{ width:50px; height:55px; padding: 5px 5px 0; margin:0 auto}
+.qiqiu2 div{ width:60px; height:65px; padding: 5px 5px 0; margin:0 auto}
+
+.qiqiu5{ bottom:-200px; left:1250px;animation: myfirst5 19.5s 1.2s linear infinite;animation-delay:4s;width:60px;}
+.text{font-size:8px;margin-top:10px}
+@keyframes myfirst
+{
+from {bottom: -200px;}
+to {bottom: 800px;}
+}
+@keyframes myfirst2
+{
+from {bottom: -200px;}
+to {bottom: 850px;}
+}
+@keyframes myfirst3
+{
+from {bottom: -200px;}
+to {bottom: 820px;}
+}
+@keyframes myfirst4
+{
+from {bottom: -200px;}
+to {bottom: 780px;}
+}
+@keyframes myfirst5
+{
+from {bottom: -200px;}
+to {bottom: 830px;}
+}
+@keyframes myfirst6
+{
+from {left: 1060px;}
+to {left: 1250px;}
+}
+@keyframes myfirst7
+{
+from {left: 180px;}
+to {left: 400px;}
+}
+@keyframes myfirst8
+{
+from {left: 50px;}
+to {left: 350px;}
+}
+@keyframes myfirst9
+{
+from {left: 762px;}
+to {left: 1000px;}
+}
+@-webkit-keyframes myfirst
+{
+from {bottom: -200px;}
+to {bottom: 800px;}
+}
+@-webkit-keyframes myfirst2
+{
+from {bottom: -200px;}
+to {bottom: 850px;}
+}
+@-webkit-keyframes myfirst3
+{
+from {bottom: -200px;}
+to {bottom: 820px;}
+}
+@-webkit-keyframes myfirst4
+{
+from {bottom: -200px;}
+to {bottom: 780px;}
+}
+@-webkit-keyframes myfirst5
+{
+from {bottom: -200px;}
+to {bottom: 830px;}
+}
+@-webkit-keyframes myfirst6
+{
+from {left: 1060px;}
+to {left: 1250px;}
+}
+@-webkit-keyframes myfirst7
+{
+from {left: 180px;}
+to {left: 400px;}
+}
+@-webkit-keyframes myfirst8
+{
+from {left: 50px;}
+to {left: 350px;}
+}
+@-webkit-keyframes myfirst9
+{
+from {left: 762px;}
+to {left: 1000px;}
+}

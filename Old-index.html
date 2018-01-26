@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>2018 Everbridge New Year's Lottery</title>
+    <title>Everbridge 2015 Annual Party -- Lottery draw</title>
     <style>
         html, body {
             position: relative;
@@ -11,57 +11,38 @@
             margin: 0;
             overflow: hidden;
             font-size: 20px;
+            background-color: #BE2136;
             color: white;
-			background-color:#e92600;
-			font-family:"微软雅黑";
         }
 
-        #dvLotteryDraw, #dvBye {
+        #dvWelcome, #dvLotteryDraw, #dvBye {
             width: 100%;
             height: 100%;
             display: none;
             font-size: 1rem;
         }
 
-        #dvLotteryEffect{
+        #dvLotteryEffect, #dvLotteryResult {
             position: relative;
             float: left;
-            width: 55%;
+            width: 50%;
             height: 100%;
         }
-		#dvLotteryResult {
-		   position: relative;
-            float: left;
-            width: 42%;
-            height: 70%;
-			background-color:#FFC;
-			border-radius:10px;
-			overflow-y:auto;
-			padding:10px;
-			scrollbar-face-color: #000;
-			scrollbar-highlight-color: #6c6c90;
-			scrollbar-shadow-color: #fcfcfc;
-			scrollbar-3dlight-color: #fcfcfc;
-			scrollbar-arrow-color: #240024;
-			scrollbar-track-color: #666;
-			scrollbar-darkshadow-color: #48486c;
-			scrollbar-base-color: #fcfcfc
-		}
 
         #btnNextPage, #btnClear {
             position: fixed;
             bottom: 20px;
-            right: 120px;
+            right: 20px;
             font-size: 1rem;
             z-index: 1;
         }
 
         #btnClear {
-            right: 280px;
+            right: 180px;
         }
 
         /*------Welcome------*/
-        #dvLotteryDraw {
+        #dvWelcome {
             display: block;
         }
 
@@ -82,7 +63,7 @@
         .introduce {
             font-size: 1rem;
             position: absolute;
-            left: 55%;
+            left: 50%;
             margin-left: -90px;
         }
 
@@ -90,7 +71,7 @@
             height: 50%;
             overflow: auto;
             margin-top: 40px;
-            display: none;
+            /*display: none;*/
         }
 
         .preload-attendance {
@@ -124,8 +105,8 @@
         }
 
         .headimage {
-            width: 350px;
-            height: 450px;
+            width: 250px;
+            height: 250px;
             display: inline-block;
         }
 
@@ -137,80 +118,56 @@
             margin-bottom: 5px;
         }
 
-		  #dvFrame img{
-           right:26%;
-		   position:absolute;
-		   width:48%;
-		   height:50%;
-		   z-index:100;
-		   bottom:80px;
-		   border: solid 5px #FFFF00;
-
+        #dvFrame {
+            position: relative;
+            width: 250px;
+            height: 300px;
+            left: 50%;
+            margin-left: -125px;
+            padding: 5px;
+            border: solid 1px red;
+            background-color: #633333;
         }
 
         div.result-container {
             margin: 5px;
             padding: 5px;
             border: solid 1px red;
-			background-color:#ffba00;
         }
 
         span.attendance-name {
-            position:absolute;
-            right:50%;
-            margin-right:-55px;
-            bottom:60px;
-			z-index:101;
+            position: relative;
+            left: 50px;
+            top: 10px;
             font-size: 1.2rem;
-            font-weight: bold;
-			background:#FF0;
-			color:#F00;
-			padding-left:5px;
-			padding-right:5px;
-			border:medium dotted #F90;
-            text-align: center;
-            height: 62px;
-            width: 110px;
         }
 
         span.result-head-name {
-            font-size: 22px;;
-            color:#F00;
+            font-size: 1.6rem;
+            color: #F1DD17;
         }
 
         span.result-head-desc {
-
             position: relative;
             left: 60px;
             font-size: 0.8rem;
-			color:#000;
         }
 
         .result-item {
             display: inline-block;
-            font-size:12px;
-			color:#000;
-			margin:5px;
-			position:relative;
+            font-size: 0.7rem;
+            margin: 5px;
         }
 
         .result-item-headimg {
-            width: 60px;
+            width: 70px;
             height: 70px;
             display: block;
             clear: right;
-
         }
 
         .result-item-name {
-			font-size:12px;
-			position:absolute;
-			top:50px;
-			background:#FF0;
-            width:60px;
-            height: 32px;
-			text-align:center;
-			text-align:-webkit-center;
+
         }
 
         #dvCurrent {
@@ -229,7 +186,6 @@
             width: 95%;
             background-color: red;
             padding: 2px 0 2px 10px;
-			display:none;
         }
 
         @-webkit-keyframes currentLevel {
@@ -248,72 +204,7 @@
             margin-top: 4px;
             margin-left: 4px;
             -webkit-animation: currentLevel 1s infinite linear;
-			background-color:#FF6;
         }
-	/*	.winner-bg{ width:100%;
-		height:545px;
-		background-image:url(resources/img/light-bg.png);
-		background-repeat:no-repeat;
-		background-position:center;
-		vertical-align:bottom;}*/
-		.winner-bg img{right:1%;
-		bottom:20px;
-		position:absolute;
-		width:100%;
-		height:46%}
-
-		.title-big img{
-	    right:1%;
-		position:absolute;
-		width:100%;
-		height:26%
-		}
-		.title2{
-		width:45%;
-		height:60px;
-		margin-top:30px;
-		float:right;
-		}
-		.title2 img{
-	    right:5%;
-		position:absolute;
-		width:40%;
-		height:5%
-		}
-		.btnNextPage-1{
-      background: url(resources/img/logo.png);
-  background-size: contain;
-  background-repeat-y: no-repeat;
-		/* background-image:url(resources/img/logo.svg); */
-    /* background-size: contain; */
-		width:150px;
-		height:50px;
-		}
-
-        #dvLotteryResult::-webkit-scrollbar {
-                 width:10px;
-                 height:10px;
-             }
-        #dvLotteryResult::-webkit-scrollbar-button    {
-            background-color:#FF7677;
-        }
-        #dvLotteryResult::-webkit-scrollbar-track     {
-            background:#FF66D5;
-        }
-        #dvLotteryResult::-webkit-scrollbar-track-piece {
-            background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);
-        }
-        #dvLotteryResult::-webkit-scrollbar-thumb{
-            background:#FFA711;
-            border-radius:4px;
-        }
-        #dvLotteryResult::-webkit-scrollbar-corner {
-            background:#82AFFF;
-        }
-        #dvLotteryResult::-webkit-scrollbar-resizer  {
-            background:#FF0BEE;
-        }
-
     </style>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/utils.js"></script>
@@ -322,22 +213,25 @@
     <script>
         $(function () {
             var pageCount = 0;
-            $('#btnNextPage').click(function () {
+            $('#dvWelcome,#dvBye,#btnNextPage').click(function () {
                 pageCount++;
-                if (pageCount === 1) {
+                if (pageCount === 3) {
                     pageCount = 0;
                 }
                 switch (pageCount) {
                     case 0:
-                        $('#dvLotteryDraw').show();
-                        //$('#dvBye').slideUp(200);
-						$('#btnClear').show();
+                        $('#dvWelcome').show();
+                        $('#dvBye').slideUp(200);
                         break;
-                   // case 1:
-//                        $('#dvLotteryDraw').hide();
-//                        $('#btnClear').show();
-//                        $('#dvBye').slideDown(200);
-//                        break;
+                    case 1:
+                        $('#dvWelcome').hide();
+                        $('#dvLotteryDraw').slideDown(200);
+                        break;
+                    case 2:
+                        $('#dvLotteryDraw').hide();
+                        $('#btnClear').show();
+                        $('#dvBye').slideDown(200);
+                        break;
                 }
             });
             $('#dvLotteryResult').delegate('.result-container', 'click', function () {
@@ -387,35 +281,32 @@
     </script>
 </head>
 <body>
-
+<button id="btnNextPage">Next Page →</button>
+<div id="dvWelcome">
+    <div class="welcome-content">
+        Everbridge 2015 Annual Party -- Lottery draw
+    </div>
+</div>
 <div id="dvLotteryDraw">
     <div id="dvLotteryEffect">
-        <div class="title-big"><img src="resources/img/title-big-.png" width="842" height="258"></div>
-          <div class="winner-bg">
-            <div id="dvFrame">
-            <img src="resources/img/1111.gif" width="350" height="450">
-<!-- <span class="attendance-name" style="left:10px;">
-                Who will be the luck guy ?
-                </span>-->
-            </div>
-          <img src="resources/img/light-bg.png" width="1033" height="556"> </div>
-        <!--<span id="spIntroduce" class="introduce">
+        <div id="dvFrame">
+            <span class="attendance-name" style="left:10px;">
+            Who will be the luck guy ?
+            </span>
+        </div>
+        <span id="spIntroduce" class="introduce">
             Press "Space key" to Start
-        </span>-->
+        </span>
     </div>
-    <div class="title2">
-    <img src="resources/img/Who.png" width="650" height="50"> </div>
     <div id="dvLotteryResult">
-
         <div id="dvCurrent">
             →
         </div>
     </div>
-    <a id="btnNextPage" href="lastpage/index.html" class="btnNextPage-1"></a>
 </div>
 <div id="dvBye">
+    结束页，随便来点东西。给个按钮，清空抽奖结果，弹框确认一下
     <button id="btnClear">Clear</button>
-
 </div>
 </body>
 </html>

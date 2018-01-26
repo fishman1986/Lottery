@@ -1,0 +1,76 @@
+@charset "utf-8";
+h1,h2,h3,h4,h5,h6 {
+	font-size:100}
+img {
+	border:none;
+	-ms-interpolation-mode:bicubic
+}
+input[type=button],input[type=submit] {
+	cursor:pointer
+}
+button {
+	cursor:pointer
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+a {
+	text-decoration:none
+}
+a:hover {
+	text-decoration:underline
+}
+.frame_top,.mod_footer,.wrap {
+	min-width:1000px;
+	background-color:#12343f
+}
+.mod_footer a,.mod_footer p {
+	color:#eee
+}
+.wrap {
+	position:relative;
+	width:100%;
+	overflow:hidden
+}
+.mod_info1 {
+	height:320px;
+	position:relative
+}
+.mod_info1__logoall {
+	height:348px;
+	width:345px;
+	position:absolute;
+	top:0;
+	right:32px
+}
+.mod_info1__logo1 {
+	background-image:url(sprite/ani1.png);
+	background-position:0 0;
+	_background-image:url(img/logo_1ie.png)
+}
+.mod_info1__logo2 {
+	background-image:url(sprite/ani1.png);
+	background-position:-347px 0;
+	_background-image:url(img/logo_2ie.png)
+}
+.mod_info1__logo3 {
+	background-image:url(sprite/ani1.png);
+	background-position:-694px 0;
+	_background-image:url(img/logo_3ie.png)
+}
+.mod_info1__f {
+	position:absolute;
+	width:34px;
+	height:34px;
+	background:url(img/flash.png);
+	_display:none
+}
+.mod_info1__flash {
+	bottom:163px;
+	left:130px
+}
+.mod_info1__flash1 {
+	bottom:92px;
+	right:79px
+}
